@@ -2,6 +2,8 @@
 
 **Please refer to [https://github.com/yuzhimanhua/Multi-BioNER](https://github.com/yuzhimanhua/Multi-BioNER) for the updated version.**
 
+# Cross-type Biomedical Named Entity Recognition with Deep Multi-task Learning
+
 This project provides a neural network based multi-task learning framework for biomedical named entity recognition (BioNER).
 
 The implementation is based on the PyTorch library. Our model collectively trains different biomedical entity types to build a unified model that benefits the training of each single entity type and achieves a significantly better performance compared with the state-of-the-art BioNER systems.
@@ -32,7 +34,7 @@ pip3 install -r requirements.txt
 
 ## Quick Start
 
-To reproduce the results in our [paper](https://arxiv.org/abs/1801.09851), you can first download the corpora and the embedding file from **[here](https://drive.google.com/file/d/1tWQjxY2cPWRTbwra4YA4rHG-xRJH_DFc/view?usp=sharing)**, unzip the folder ```data_bioner_5/``` and put it under the main folder ```./```. Then the following running script can be used to run the model.
+To reproduce the results in our [paper](https://arxiv.org/abs/1801.09851), you can first download the corpora and the embedding file from **[here](https://drive.google.com/file/d/1JHQJ9DKaEeSGZdA0Nmz9KCdtjUoJKXCb/view?usp=sharing)**, unzip the folder ```data_bioner_5/``` and put it under the main folder ```./```. Then the following running script can be used to run the model.
 ```
 ./run_lm-lstm-crf5.sh
 ```
@@ -51,7 +53,7 @@ We use five biomedical corpora collected by Crichton et al. for biomedical NER. 
 
 #### Note
 **In our paper, we merge the original training set and development set to be the new training set, as many teams did in the challenge. Some previous work (e.g., [Luo et al., Bioinformatics 2017](https://github.com/lingluodlut/Att-ChemdNER), [Lu et al., Journal  of
-cheminformatics 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4331694/pdf/1758-2946-7-S1-S4.pdf) and [Leaman and Lu, Bioinformatics 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5018376/pdf/btw343.pdf)) also preprocessed data in this way. If you want to reproduce our results, please also follow this way.**
+cheminformatics 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4331694/pdf/1758-2946-7-S1-S4.pdf) and [Leaman and Lu, Bioinformatics 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5018376/pdf/btw343.pdf)) also preprocessed data in this way. If you want to reproduce our results, please follow the same way.**
 
 #### Format
 
@@ -137,7 +139,7 @@ python3 train_wc.py --train_file [training file 1] [training file 2] ... [traini
 If users do not use ````--output_annotation````, the best performing model during the training process will be saved in ```./checkpoint/```. 
 
 #### Pre-trained Model
-**We have released our pre-trained model. You can download the [Arg](https://drive.google.com/file/d/1NouTmOIAmudBe20Wr2LLCBTCcaUiDci_/view?usp=sharing) file and the [Model](https://drive.google.com/file/d/1GU4zE_Hns6l-zvYZ6I8KMAhJSIGz7f_A/view?usp=sharing) file and put them in ```./checkpoint/```.**
+**We have released our pre-trained model. You can download the [Arg](https://drive.google.com/file/d/1CxW75H1NwnUCfnBVWQFdZD9TNbuayUAQ/view?usp=sharing) file and the [Model](https://drive.google.com/file/d/1aBoIUDzU6_DcB0c1Y1t0AoKmcVik0YO1/view?usp=sharing) file and put them in ```./checkpoint/```.**
 
 Using the saved model, ```seq_wc.py``` can be applied to annotate raw text. Its usage can be accessed by command 
 ```
@@ -199,10 +201,16 @@ factor O
 ## Citation
 If you find the implementation useful, please cite the following paper:
 ```
-@article{wang2018cross,
-  title={Cross-type Biomedical Named Entity Recognition with Deep Multi-Task Learning},
-  author={Wang, Xuan and Zhang, Yu and Ren, Xiang and Zhang, Yuhao and Zitnik, Marinka and Shang, Jingbo and Langlotz, Curtis and Han, Jiawei},
-  journal={arXiv preprint arXiv:1801.09851},
-  year={2018}
+@article{doi:10.1093/bioinformatics/bty869,
+author = {Wang, Xuan and Zhang, Yu and Ren, Xiang and Zhang, Yuhao and Zitnik, Marinka and Shang, Jingbo and Langlotz, Curtis and Han, Jiawei},
+title = {Cross-type Biomedical Named Entity Recognition with Deep Multi-Task Learning},
+journal = {Bioinformatics},
+volume = {},
+number = {},
+pages = {bty869},
+year = {2018},
+doi = {10.1093/bioinformatics/bty869},
+URL = {http://dx.doi.org/10.1093/bioinformatics/bty869},
+eprint = {/oup/backfile/content_public/journal/bioinformatics/pap/10.1093_bioinformatics_bty869/1/bty869.pdf}
 }
 ```
