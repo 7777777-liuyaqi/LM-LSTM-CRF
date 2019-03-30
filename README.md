@@ -2,8 +2,6 @@
 
 **Please refer to [https://github.com/yuzhimanhua/Multi-BioNER](https://github.com/yuzhimanhua/Multi-BioNER) for the updated version.**
 
-# Cross-type Biomedical Named Entity Recognition with Deep Multi-task Learning
-
 This project provides a neural network based multi-task learning framework for biomedical named entity recognition (BioNER).
 
 The implementation is based on the PyTorch library. Our model collectively trains different biomedical entity types to build a unified model that benefits the training of each single entity type and achieves a significantly better performance compared with the state-of-the-art BioNER systems.
