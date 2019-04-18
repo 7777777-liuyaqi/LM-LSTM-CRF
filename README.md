@@ -32,14 +32,14 @@ pip3 install -r requirements.txt
 
 ## Quick Start
 
-To reproduce the results in our [paper](https://arxiv.org/abs/1801.09851), you can first download the corpora and the embedding file from **[here](https://drive.google.com/file/d/1JHQJ9DKaEeSGZdA0Nmz9KCdtjUoJKXCb/view?usp=sharing)**, unzip the folder ```data_bioner_5/``` and put it under the main folder ```./```. Then the following running script can be used to run the model.
+To reproduce the results in our [paper](https://arxiv.org/abs/1801.09851), you can first download the corpora and the embedding file **[here](https://drive.google.com/file/d/1JHQJ9DKaEeSGZdA0Nmz9KCdtjUoJKXCb/view?usp=sharing)**, unzip the folder ```data_bioner_5/``` and put it under the main folder ```./```. Then the following running script can be used to run the model.
 ```
 ./run_lm-lstm-crf5.sh
 ```
 
 ## Data
 
-We use five biomedical corpora collected by Crichton et al. for biomedical NER. The dataset is publicly available and can be downloaded from [here](https://github.com/cambridgeltl/MTL-Bioinformatics-2016). The details of each dataset are listed below:
+We use five biomedical corpora collected by Crichton et al. for biomedical NER. The dataset is publicly available and can be downloaded [here](https://github.com/cambridgeltl/MTL-Bioinformatics-2016). The details of each dataset are listed below:
 
 |Dataset | Entity Type | Dataset Size | 
 | ------------- |-------------| -----|
@@ -61,7 +61,7 @@ More specifically, **empty lines** are used as separators between sentences, and
 ```
 -DOCSTART- -X- -X- -X- O
 ```
-Other lines contains words, labels and other fields. **Word** must be the **first** field, **label** mush be the **last**. For example,
+Other lines contains words, labels and other fields. **Word** must be the **first** field, **label** must be the **last**. For example,
 ```
 -DOCSTART- -X- -X- -X- O
 
@@ -91,7 +91,7 @@ withdrawal	O
 #### Embedding
 We initialize the word embedding matrix with pre-trained word vectors from Pyysalo et al., 2013. These word vectors are
 trained using the skip-gram model on the PubMed abstracts together with all the full-text articles
-from PubMed Central (PMC) and a Wikipedia dump. You can download the embedding files from [here](http://evexdb.org/pmresources/vec-space-models/).
+from PubMed Central (PMC) and a Wikipedia dump. You can download the embedding files [here](http://evexdb.org/pmresources/vec-space-models/).
 
 ## Usage
 
